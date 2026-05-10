@@ -1,4 +1,6 @@
 import { client } from '@/sanity/lib/client'
+import Header from '@/app/components/Header'
+import Footer from '@/app/components/Footer'
 
 async function getPage() {
   return await client.fetch(`*[_type == "page"][0]`)
@@ -10,15 +12,7 @@ export default async function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans">
 
-      {/* Header */}
-      <header className="bg-blue-700 text-white px-8 py-4 flex items-center justify-between">
-        <span className="text-xl font-bold">Testando</span>
-        <nav className="flex gap-6">
-          <a href="#" className="hover:text-orange-300">Início</a>
-          <a href="#" className="hover:text-orange-300">Sobre</a>
-          <a href="#" className="hover:text-orange-300">Contato</a>
-        </nav>
-      </header>
+      <Header />
 
       {/* Seção Hero */}
       <section className="bg-orange-500 text-white flex flex-col items-center justify-center py-32 px-8 text-center">
@@ -43,10 +37,7 @@ export default async function Home() {
         </p>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-blue-700 text-white text-center py-6 mt-auto">
-        <p>© 2025 Testando. Todos os direitos reservados.</p>
-      </footer>
+      <Footer />
 
     </div>
   )
